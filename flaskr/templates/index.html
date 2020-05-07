@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"
+        integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename = 'main.js')}}"></script>
+
+</head>
+
+<body>
+    <h1>HELLO WORLD 2</h1>
+    <h1>this is just a test to check github</h1>
+    <h1>this is just a test to check github</h1>
+    <h2>CSS WORKING CHECK!</h2>
+    <h3>JS WORKING CHECK!</h3>
+    <input type="text" id="test_input">
+    <button onclick=submit()>Test JS</button>
+    <h4>check console for output</h4>
+    <h2>Dynamic data fetch check</h2>
+    <h1 id="dyn_data"></h1>
+    <button onclick=get_data()>CHANGE!!!</button>
+
+    <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data" accept=".csv">
+        <input type="file" id="fileUpload" name="file">
+
+        <input name="position" type="checkbox" value="Project Manager" /> Project Manager<br>
+        <input name="position" type="checkbox" value="Content Developer" /> Content Developer<br>
+        <input name="position" type="checkbox" value="Graphic Designer" /> Graphic Designer<br>
+        <input name="position" type="checkbox" value="Digital Media Creator & Storyteller" /> Digital Media Creator &
+        Storyteller<br>
+        <input name="position" type="checkbox" value="Programmer" /> Programmer<br>
+        <input name="position" type="checkbox" value="Server Engineer/Technician" /> Server Engineer/Technician<br>
+        <input name="position" type="checkbox" value="User Experience Designer" />
+
+        <!--add the all inputs under this form, 
+        include name attribute in each input tag
+        ex:- <input name='columns_to_consider'>
+             <input name='data_types'> -->
+    </form>
+
+    <button onclick=upload()>UPLOAD</button>
+
+    <div id="dvCSV"></div>
+
+    <button type="submit" form="getfile">Submit</button>
+
+</body>
+
+</html>
