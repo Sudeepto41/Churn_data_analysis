@@ -4,48 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Churn Data Analysis</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="{{ url_for('static', filename = 'jquery.js')}}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename = 'main.js')}}"></script>
+        
 
 </head>
 
 <body>
-    <h1>HELLO WORLD 2</h1>
-    <h1>this is just a test to check github</h1>
-    <h1>this is just a test to check github</h1>
-    <h2>CSS WORKING CHECK!</h2>
-    <h3>JS WORKING CHECK!</h3>
-    <input type="text" id="test_input">
-    <button onclick=submit()>Test JS</button>
-    <h4>check console for output</h4>
-    <h2>Dynamic data fetch check</h2>
-    <h1 id="dyn_data"></h1>
-    <button onclick=get_data()>CHANGE!!!</button>
+    <h2>Churn Data Analysis</h2>
 
     <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data" accept=".csv">
         <input type="file" id="fileUpload" name="file">
-
-        <input name="position" type="checkbox" value="Project Manager" /> Project Manager<br>
-        <input name="position" type="checkbox" value="Content Developer" /> Content Developer<br>
-        <input name="position" type="checkbox" value="Graphic Designer" /> Graphic Designer<br>
-        <input name="position" type="checkbox" value="Digital Media Creator & Storyteller" /> Digital Media Creator &
-        Storyteller<br>
-        <input name="position" type="checkbox" value="Programmer" /> Programmer<br>
-        <input name="position" type="checkbox" value="Server Engineer/Technician" /> Server Engineer/Technician<br>
-        <input name="position" type="checkbox" value="User Experience Designer" />
-
         <!--add the all inputs under this form, 
         include name attribute in each input tag
         ex:- <input name='columns_to_consider'>
-    tu chutoya!!!!-->
+        tu chutoya!!!!-->
     </form>
 
     <button onclick=upload()>UPLOAD</button>
-
-    <div id="dvCSV"></div>
+    <div class="container">
+        <div id="dvCSV" class="table-responsive" ></div>
+    </div>
+    
 
     <button type="submit" form="getfile">Submit</button>
 
