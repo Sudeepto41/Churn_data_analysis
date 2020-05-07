@@ -1,8 +1,9 @@
 from flask import Flask, render_template, jsonify, request
 from random import randint
 import os
+import pandas as pd
+from Dora import Dora
 
-import CleanData as cd
 
 curr_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -33,3 +34,17 @@ def get_csv():
 
 if __name__ == "main":
     app.run(debug=True)
+
+
+def clean(file, dest):
+
+    data = pd.DataFrame(pd.read_csv(dest))
+
+    c_unique = {}
+    for cols in data.columns:
+        if data[cols].dtypes == 'object':
+            c_unique[cols] = list(data[cols].unique())
+
+    for key in c_unique:
+        print("0")
+        print(key, ": ", len(c_unique[key]))
