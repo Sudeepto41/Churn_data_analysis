@@ -23,6 +23,7 @@ function upload() {
       var reader = new FileReader();
       reader.onload = function (e) {
         var table = document.createElement("table");
+        table.setAttribute("class","table table-bordered")
         var rows = e.target.result.split("\n");
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].split(",");
