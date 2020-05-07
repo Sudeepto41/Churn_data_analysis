@@ -1,3 +1,7 @@
-h2 {
-  color: blue;
+h2{
+  text-align: center;
+}
+.jumbotron{
+  background-color: #AC3B61;                   
+  color:#E3E2DF;
 }

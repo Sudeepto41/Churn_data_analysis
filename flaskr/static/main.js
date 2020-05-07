@@ -2,6 +2,8 @@
 
 const url = "http://127.0.0.1:5000/data";
 
+
+$("#clean").attr("disabled",true);
 function submit() {
   var a = document.getElementById("test_input").value;
   console.log(a);
@@ -13,6 +15,7 @@ function get_data() {
     console.log(data + 3);
   });
 }
+
 
 function upload() {
   var fileUpload = document.getElementById("fileUpload");
@@ -46,4 +49,9 @@ function upload() {
   } else {
     alert("Please upload a valid CSV file.");
   }
+  var btn=document.getElementById("clean");
+  btn.setAttribute("class","btn btn-primary btn-lg active");
+  btn.disabled=false;
+  
 }
+
