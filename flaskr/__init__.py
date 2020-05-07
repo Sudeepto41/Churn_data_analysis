@@ -25,6 +25,7 @@ def data():
 def get_csv():
     target = os.path.join(curr_dir, 'csv/')
     file = request.files['file']
+    l = request.form.getlist('position')
     filename = file.filename
     dest = "/".join([target, filename])
     file.save(dest)
