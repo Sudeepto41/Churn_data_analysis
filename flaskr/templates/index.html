@@ -24,29 +24,27 @@
             <h2>Churn Data Analysis</h2>
         </div>
     </div>
-   
-    
+
+
 
     <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data" accept=".csv">
         <input type="file" id="fileUpload" name="file">
-        <br><br>
-        <!--add the all inputs under this form, 
-        include name attribute in each input tag
-        ex:- <input name='columns_to_consider'>
-        tu chutoya!!!!-->
+        <br>
+        <br>
     </form>
     <div class="uploadsss">
-        <button onclick=upload() class="btn btn-default btn-lg" style="margin-right: 16px">UPLOAD</button>   
-        <button id="clean" type="submit" form="getfile" class="btn btn-default btn-lg" disabled="disabled" style="margin-right: 16px">Clean Data</button>
+        <button onclick=upload() class="btn btn-default btn-lg" style="margin-right: 16px">UPLOAD</button>
+        <button id="clean" type="submit" form="getfile" class="btn btn-default btn-lg" disabled="disabled"
+            style="margin-right: 16px">Clean Data</button>
         <br><br>
         <div class="container">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
             <div id="dvCSV" ></div>
             </div>
         </div>
-        
-        </div>
-   
+
+    </div>
+
 
 </body>
 
