@@ -5,3 +5,19 @@ h2{
   background-color: #AC3B61;                   
   color:#E3E2DF;
 }
+/* .tableb{
+  max-width: 33%;
+  max-height: 33%;
+  width:50%;
+  height: 50%;
+  align-items: center;
+  border: 3px solid black;
+} */
+.my-custom-scrollbar {
+  position: relative;
+  height: 500px;
+  overflow: auto;
+  }
+  .table-wrapper-scroll-y {
+  display: block;
+  }

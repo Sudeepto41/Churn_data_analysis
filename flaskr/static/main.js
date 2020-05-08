@@ -26,7 +26,7 @@ function upload() {
       var reader = new FileReader();
       reader.onload = function (e) {
         var table = document.createElement("table");
-        table.setAttribute("class","table table-bordered")
+        table.setAttribute("class","table table-bordered table-responsive")
         var rows = e.target.result.split("\n");
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].split(",");
@@ -50,8 +50,10 @@ function upload() {
     alert("Please upload a valid CSV file.");
   }
   var btn=document.getElementById("clean");
-  btn.setAttribute("class","btn btn-primary btn-lg active");
-  btn.disabled=false;
+    btn.setAttribute("class","btn btn-primary btn-lg active");
+    btn.disabled=false;
   
 }
+
+
 
