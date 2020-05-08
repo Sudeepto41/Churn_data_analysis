@@ -2,8 +2,7 @@
 
 const url = "http://127.0.0.1:5000/data";
 
-
-$("#clean").attr("disabled",true);
+$("#clean").attr("disabled", true);
 function submit() {
   var a = document.getElementById("test_input").value;
   console.log(a);
@@ -16,31 +15,32 @@ function get_data() {
   });
 }
 
-
 function upload() {
   var fileUpload = document.getElementById("fileUpload");
   console.log(fileUpload);
   var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+
   if (regex.test(fileUpload.value.toLowerCase())) {
     if (typeof FileReader != "undefined") {
       var reader = new FileReader();
       reader.onload = function (e) {
-        var table = document.createElement("table");
-        table.setAttribute("class","table table-bordered")
-        var rows = e.target.result.split("\n");
+        var table_data =
+          '<table class="table table-bordered table-striped table-hover">';
+        var rows = e.target.result.split(/\r?\n|\r/);
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].split(",");
-          if (cells.length > 1) {
-            var row = table.insertRow(-1);
-            for (var j = 0; j < cells.length; j++) {
-              var cell = row.insertCell(-1);
-              cell.innerHTML = cells[j];
+          table_data += "<tr>";
+          for (var cell_count = 0; cell_count < cells.length; cell_count++) {
+            if (i === 0) {
+              table_data += "<th>" + cells[cell_count] + "</th>";
+            } else {
+              table_data += "<td>" + cells[cell_count] + "</td>";
             }
           }
+          table_data += "</tr>";
         }
-        var dvCSV = document.getElementById("dvCSV");
-        dvCSV.innerHTML = "";
-        dvCSV.appendChild(table);
+        table_data += "</table>";
+        $("#table").html(table_data);
       };
       reader.readAsText(fileUpload.files[0]);
     } else {
@@ -49,9 +49,8 @@ function upload() {
   } else {
     alert("Please upload a valid CSV file.");
   }
-  var btn=document.getElementById("clean");
-  btn.setAttribute("class","btn btn-primary btn-lg active");
-  btn.disabled=false;
-  
-}
 
+  var btn = document.getElementById("clean");
+  btn.setAttribute("class", "btn btn-success btn-md active");
+  btn.disabled = false;
+}
