@@ -11,22 +11,17 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def test():
-    return render_template("index.html")
-
-
-@app.route("/data")
-def data():
-    dyn_data = str(randint(1, 10))
-    return dyn_data
+def homepage():
+    return render_template("index.html") 
 
 
 @app.route("/upload", methods=["POST"])
 def get_csv():
     target = os.path.join(curr_dir, 'csv/')
     file = request.files['file']
-    l = request.form.getlist('position')
-    print(l)
+    column_name = request.form.getlist('column_name[]')
+    print(column_name)
+    print('0')
     filename = file.filename
     dest = "/".join([target, filename])
     file.save(dest)

@@ -27,20 +27,22 @@
 
 
 
-    <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data" accept=".csv">
-        <input type="file" id="fileUpload" name="file">
+    <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" id="fileUpload" name="file" accept=".csv">
         <br>
         <br>
+        <div class="container">
+
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <div id="table"></div>
+            </div>
+        </div>
     </form>
     <div class="uploadsss">
         <button class="btn btn-primary" onclick=upload()>UPLOAD</button>
         <button class="btn btn-success" id="clean" type="submit" form="getfile" disabled="disabled">Clean Data</button>
         <br><br>
-        <div class="container">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                <div id="table"></div>
-            </div>
-        </div>
+
 
     </div>
 
