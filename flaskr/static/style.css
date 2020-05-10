@@ -1,23 +1,47 @@
 h2{
   text-align: center;
 }
+body{
+  background-color: #000000 ;
+}
 .jumbotron{
-  background-color: #AC3B61;                   
+  background-color: #871F78;                   
   color:#E3E2DF;
 }
-/* .tableb{
-  max-width: 33%;
-  max-height: 33%;
-  width:50%;
-  height: 50%;
-  align-items: center;
-  border: 3px solid black;
-} */
+
 .my-custom-scrollbar {
   position: relative;
-  height: 500px;
+  height: 350px;
   overflow: auto;
   }
   .table-wrapper-scroll-y {
   display: block;
   }
+  #loading{
+    width: 20px;
+    height: 20px;
+     top: 0;
+    left: 0; 
+    position: relative;
+    display: block;
+    opacity: 0.7;
+    background-color: #000000;
+     z-index: 99; 
+    text-align: center;
+  }
+  #loading-image {
+    position: relative;
+    top: 100px;
+    left: 240px;
+    z-index: 100; 
+  }
+  img.animated-gif{
+    width: 120px;
+    height: auto;
+  }
+  th{
+    background-color: #68228B	;
+    color:#ECC8EC	
+  }
+  
+  
