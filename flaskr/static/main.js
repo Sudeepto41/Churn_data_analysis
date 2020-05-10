@@ -8,6 +8,16 @@ function submit() {
   console.log(a);
 }
 
+  
+    
+    $('#plisupload').onclick(function(){
+      $('#gifani').show();
+    });
+
+
+
+
+
 function upload() {
   var fileUpload = document.getElementById("fileUpload");
   console.log(fileUpload);
@@ -52,3 +62,7 @@ function upload() {
   btn.setAttribute("class", "btn btn-success btn-md active");
   btn.disabled = false;
 }
+
+$(window).load(function() {
+  $('#loading').hide();
+});

@@ -30,18 +30,21 @@
     </div>
 
     <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" id="fileUpload" name="file" accept=".csv">
+        <input type="file" id="fileUpload" name="file" accept=".csv" >
         <br>
         <br>
         <div class="container">
-
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                <div id="table"></div>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar loader">
+                <div id="table">
+                    <img class="animated-gif" id="gifani" src="https://media.giphy.com/media/3ohzdOrcdpiD26TPt6/giphy.gif" style="display: none;"  alt="Loading..">
+                </div>
+                
             </div>
+            
         </div>
     </form>
     <div class="uploadsss">
-        <button class="btn btn-primary" onclick=upload()>UPLOAD</button>
+        <button class="btn btn-primary" id="plisupload" onclick=upload()>UPLOAD</button>
         <button class="btn btn-success" id="clean" type="submit" form="getfile" disabled="disabled">Clean Data</button>
         <br><br>
 
