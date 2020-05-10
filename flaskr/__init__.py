@@ -33,7 +33,7 @@ if __name__ == "main":
     app.run(debug=True)
 
 
-def clean(file, dest):
+def clean(file, dest, column_name):
 
     data = pd.DataFrame(pd.read_csv(dest))
 

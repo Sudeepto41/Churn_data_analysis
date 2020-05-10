@@ -1,3 +1,7 @@
+function preloader() {
+  preloader = document.getElementById("preloader");
+}
+
 $("#clean").attr("disabled", true);
 function submit() {
   var a = document.getElementById("test_input").value;

@@ -18,14 +18,16 @@
 
 </head>
 
-<body>
+<body onload=preloader()>
+    <div id="preloader">
+
+    </div>
+
     <div class="container">
         <div class="jumbotron">
             <h2>Churn Data Analysis</h2>
         </div>
     </div>
-
-
 
     <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
         <input type="file" id="fileUpload" name="file" accept=".csv">
