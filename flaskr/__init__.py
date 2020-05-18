@@ -12,21 +12,21 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return render_template("index.html") 
+    return render_template("index.html")
 
 
-@app.route("/upload", methods=["POST"])
+@app.route("/upload", methods=["GET", "POST"])
 def get_csv():
     target = os.path.join(curr_dir, 'csv/')
     file = request.files['file']
     column_name = request.form.getlist('column_name[]')
     print(column_name)
-    print('0')
+    print('100')
     filename = file.filename
     dest = "/".join([target, filename])
     file.save(dest)
     #cd.clean(file, dest)
-    return render_template("index.html")
+    return jsonify(cname=column_name)
 
 
 if __name__ == "main":
