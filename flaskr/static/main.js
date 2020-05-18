@@ -6,9 +6,9 @@ function submit() {
 
   
     
-    $('#plisupload').onclick(function(){
-      $('#gifani').show();
-    });
+    // $('#plisupload').onclick(function(){
+    //   $('#gifani').show();
+    // });
 
 
 
@@ -59,6 +59,6 @@ function upload() {
   btn.disabled = false;
 }
 
-$(window).load(function() {
-  $('#loading').hide();
-});
+// $(window).load(function() {
+//   $('#loading').hide();
+// });
