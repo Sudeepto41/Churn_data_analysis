@@ -1,36 +1,129 @@
-h2{
+body {
+  background-color: #151d1e;
+  display: flex;
+}
+
+#preloader {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: #151d1e url("preloader.gif") center no-repeat;
+  z-index: 100;
+}
+
+#center_wrapper {
+  margin-left: 80px;
+  width: 80%;
+  height: 100vh;
+}
+
+#header_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#dashboard {
+  position: relative;
+  width: 250px;
+  margin: 0px 0px;
+  padding: 20px 30px;
+  color: #ffffff;
+}
+
+#file_upload_wrapper {
+  width: 500px;
+  margin-top: 0px;
+  padding: 0px 80px;
+}
+
+#file_upload_wrapper h2,
+h5 {
+  color: #ffffff;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#file_upload_wrapper label i {
+  color: #ffffff;
+  font-size: 25px;
+  padding: 15px 15px;
+  border-radius: 50%;
+  background: linear-gradient(#ff4b33, #9603b3);
+  translate: (-50%, -50%);
+}
+
+#file_upload_wrapper label i:hover {
+  font-size: 30px;
+  background: linear-gradient(#9603b3, #ff4b33);
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+#page_heading {
+  width: 800px;
+  float: right;
+}
+
+#page_heading h1 {
+  font-size: 10rem;
+  font-weight: 600;
+  color: black;
+}
+
+/*  */
+
+/* #preloader2 {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background: #151d1e
+    url("https://media.giphy.com/media/3ohzdOrcdpiD26TPt6/giphy.gif") center
+    no-repeat;
+  z-index: 100;
+} */
+
+/* h2 {
   text-align: center;
 }
-body{
-  background-color: #000000 ;
-}
-.jumbotron{
-  background-color: #871F78;                   
-  color:#E3E2DF;
+.jumbotron {
+  background-color: #ac3b61;
+  color: #e3e2df;
 }
 
 .my-custom-scrollbar {
   position: relative;
   height: 350px;
   overflow: auto;
-  background-color: #202020;
-  color: #FF00AA;
-  }
-  .table-wrapper-scroll-y {
+}
+.table-wrapper-scroll-y {
   display: block;
-  background-color: #202020;
-  color:#FF00AA;
-  }
-  table{
-    color:#FF00AA;
-    background-color: #202020;
-
-  }
-
-  
-  th{
-    background-color: #68228B	;
-    color:#ECC8EC	
-  }
-  
-  
+}
+#loading {
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  position: relative;
+  display: block;
+  opacity: 0.7;
+  background-color: #000000;
+  z-index: 99;
+  text-align: center;
+}
+#loading-image {
+  position: relative;
+  top: 100px;
+  left: 240px;
+  z-index: 100;
+}
+img.animated-gif {
+  width: 120px;
+  height: auto;
+}
+th {
+  background-color: #68228b;
+  color: #ecc8ec;
+} */

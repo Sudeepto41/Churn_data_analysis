@@ -8,47 +8,122 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'sidebar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'right_sidebar.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/0f8d0c9a14.js" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename = 'jquery.js')}}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename = 'main.js')}}"></script>
 
 
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h2>Churn Data Analysis</h2>
+
+    <div id="preloader"></div>
+
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <strong>CD</strong>
         </div>
-    </div>
 
+        <ul class="list-unstyled components">
+            <li>
+                <a id="table_toggle">
+                    <i class="fas fa-table"></i>
+                </a>
+            </li>
+            <li>
+                <a id="chart_toggle">
+                    <i class="fas fa-chart-pie"></i>
+                </a>
+            </li>
+            <li>
+                <a id="predict_toggle">
+                    <i class="fas fa-diagnoses"></i>
+                </a>
+            </li>
+        </ul>
 
+    </nav>
+    <!--nav end -->
 
-    <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" id="fileUpload" name="file" accept=".csv" >
-        <br>
-        <br>
-        <div class="container">
-            <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                <div id="table">
-                </div>
-                
+    <div id="center_wrapper">
+        <h3 id="dashboard"><strong>Dashboard</strong></h3>
+
+        <div id="header_wrapper">
+            <div id="file_upload_wrapper">
+
+                <h2><strong>Add .csv data</strong></h2>
+                <h5>Upload your data to our website<br>to start analyzing</h5>
+                <br>
+                <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+                    <label for="fileUpload" id="file_upload_label">
+                        <i class="fas fa-plus" id="upload_icon"></i>
+                        <input type="file" id="fileUpload" name="file" accept=".csv">
+                    </label>
+                </form>
             </div>
-            
+            <div id="page_heading">
+                <h1>Churn Analyzer</h1>
+                <blockquote class="blockquote text-right" style="text-align: left; color: #ffffff;">
+                    <p class="mb-0">Your most unhappy customers are your greatest source of learning!!</p>
+                    <footer class="blockquote-footer">Bill Gates</footer>
+                </blockquote>
+            </div>
         </div>
-    </form>
-    <div class="uploadsss">
-        <button class="btn btn-primary" id="plisupload" onclick=upload()>UPLOAD</button>
-        <button class="btn btn-success" id="clean" type="submit" form="getfile" disabled="disabled">Clean Data</button>
-        <br><br>
+        <!--header_wrapper end -->
 
+        <div id="table_wrapper">
+            <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+                <br>
+                <div class="container">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar loader">
+                        <div id="table">
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+            <div class="uploadsss">
+                <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
+                    Data</button>
+            </div>
+        </div>
+        <!--table_wrapper end -->
+    </div>
+    <!--center_wrapper end -->
+
+    <div id="right_wrapper">
 
     </div>
+    <!--right_wrapper end -->
 
 
+
+
+
+
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                var pl = document.getElementById('preloader')
+                pl.style.display = 'none';
+            }, 2000);
+
+        })
+    </script>
 </body>
+
+<script src="{{ url_for('static', filename = 'requests.js')}}"></script>
+<script src="{{ url_for('static', filename = 'main.js')}}"></script>
+<script src="{{ url_for('static', filename = 'style.js')}}"></script>
+
 
 </html>

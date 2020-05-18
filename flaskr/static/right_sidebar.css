@@ -1,0 +1,7 @@
+#right_wrapper {
+  position: absolute;
+  right: 0px;
+  width: 16%;
+  height: 100vh;
+  border-left-style: dashed;
+}
