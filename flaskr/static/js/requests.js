@@ -1,0 +1,26 @@
+function upload() {
+  $("#getfile").on('submit', function (e) {
+    e.preventDefault();
+  });
+
+  var formData = new FormData();
+  var column_name = "";
+  $("input:checkbox[name=column_name]:checked").each(function () {
+    column_name = $(this).val();
+    formData.append("column_name[]", column_name);
+  }); // getting the values of selected columns and appending to form data
+  formData.append("file", $("input[type=file]")[0].files[0]); //appending file to formData
+
+  $.ajax({
+    url: "http://127.0.0.1:5000/upload",
+    data: formData,
+    type: "POST",
+    contentType: false,
+    processData: false,
+    success: function (usedata) {
+      console.log("Success: 200")
+      console.log(usedata)
+      print_table_server(usedata)
+    }
+  }); //Sending the request
+} //upload function end
