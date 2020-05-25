@@ -62,15 +62,59 @@ input[type="file"] {
 }
 
 #page_heading {
-  width: 800px;
+  width: 600px;
   float: right;
 }
 
+
 #page_heading h1 {
-  font-size: 10rem;
+  font-size: 7.5rem;
   font-weight: 600;
   color: black;
 }
+blockquote{
+  font-size: 14.5px;
+}
+.my-custom-scrollbar {
+  position: relative;
+  height: 350px;
+  overflow: auto;
+  background-color: #1b262c;
+}
+.table-wrapper-scroll-y {
+  display: block;
+  background-color: #1b262c;
+}
+th{
+  background-color: #e43f5a;
+  font: #1f4068;
+}
+.table td{
+  color: #e43f5a;
+}
+.table{
+  /* font:#c02739; */
+  background-color: #1b262c;
+}
+
+    /* scroll bar saxxxx */
+::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+::-webkit-scrollbar-track {
+  background: #84142d;       /* color of the tracking area */
+}
+::-webkit-scrollbar-thumb {
+  background-color:#c02739;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 1px solid #e43f5a;  /* creates padding around scroll thumb */
+}
+    /* scroll bar saxxxx */
+
+
+/* .table-bordered{
+  border: 1px solid #801336;
+} */
 
 /*  */
 
@@ -93,14 +137,7 @@ input[type="file"] {
   color: #e3e2df;
 }
 
-.my-custom-scrollbar {
-  position: relative;
-  height: 350px;
-  overflow: auto;
-}
-.table-wrapper-scroll-y {
-  display: block;
-}
+
 #loading {
   width: 20px;
   height: 20px;

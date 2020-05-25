@@ -5,12 +5,16 @@ $(document).ready(function () {
   };
 
   function print_table() {
+
     console.log("0");
     $("#preloader2").show();
     console.log("1");
 
     var fileUpload = document.getElementById("fileUpload");
     console.log(fileUpload);
+    var fileName=[];
+    fileName = document.getElementById('fileUpload').files[0].name;
+    console.log(fileName);
     var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
 
     if (regex.test(fileUpload.value.toLowerCase())) {
@@ -18,7 +22,7 @@ $(document).ready(function () {
         var reader = new FileReader();
         reader.onload = function (e) {
           var table_data =
-            '<table class="table table-bordered table-striped table-hover table-wrapper-scroll-y">';
+            '<table class="table table-hover table-wrapper-scroll-y">';
           var rows = e.target.result.split(/\r?\n|\r/);
           for (var i = 0; i < rows.length; i++) {
             var cells = rows[i].split(",");
@@ -55,3 +59,12 @@ $(document).ready(function () {
     $("#preloader2").hide();
   } //prints table
 });
+// var ul = document.getElementById("filezz");
+// for (var i = 0; i < fileName.length; i++) 
+// {
+//     var name = fileName[i];
+//     var li = document.createElement('li');
+//     li.appendChild(document.createTextNode(name));
+//     ul.appendChild(li);
+// }
+
