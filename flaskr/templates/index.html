@@ -8,22 +8,16 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'sidebar.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'right_sidebar.css')}}">
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/sidebar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/right_sidebar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/0f8d0c9a14.js" crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename = 'jquery.js')}}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-
 </head>
 
 <body>
 
     <div id="preloader"></div>
+    <div id="table_preloader"></div>
 
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -52,9 +46,11 @@
     <!--nav end -->
 
     <div id="center_wrapper">
+        <!--center_wrapper start -->
         <h3 id="dashboard"><strong>Dashboard</strong></h3>
 
         <div id="header_wrapper">
+            <!--header_wrapper start -->
             <div id="file_upload_wrapper">
 
                 <h2><strong>Add .csv data</strong></h2>
@@ -78,6 +74,7 @@
         <!--header_wrapper end -->
 
         <div id="table_wrapper">
+            <!--table_wrapper start -->
             <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="container">
@@ -106,6 +103,8 @@
                 </ul>
             
         </div>
+        <!--right_wrapper start -->
+
     </div>
     <!--right_wrapper end -->
 
@@ -113,7 +112,20 @@
 
 
 
+    <!-- script links  -->
 
+    <script src="{{ url_for('static', filename = 'js/jquery.js')}}"></script> <!-- offline - static/js/ , jquery file-->
+    <script src="https://kit.fontawesome.com/0f8d0c9a14.js" crossorigin="anonymous"></script> <!-- cdn, icons-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script> <!-- cdn, bootstrap functions -->
+
+    <script src="{{ url_for('static', filename = 'js/style.js')}}"></script>
+    <!-- offline - static/js/ , responsible for handling style related js-->
+    <script src="{{ url_for('static', filename = 'js/main.js')}}"></script>
+    <!-- offline - static/js/ , responsible for functionality-->
+    <script src="{{ url_for('static', filename = 'js/requests.js')}}"></script>
+    <!-- offline - static/js/ , reponsible for making request calls to server -->
 
     <script>
         $(document).ready(function () {
@@ -125,10 +137,5 @@
         })
     </script>
 </body>
-
-<script src="{{ url_for('static', filename = 'requests.js')}}"></script>
-<script src="{{ url_for('static', filename = 'main.js')}}"></script>
-<script src="{{ url_for('static', filename = 'style.js')}}"></script>
-
 
 </html>

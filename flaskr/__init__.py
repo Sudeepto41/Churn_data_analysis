@@ -1,8 +1,6 @@
-from flask import Flask, render_template, jsonify, request
-from random import randint
+from flask import Flask, render_template, jsonify, request, make_response
 import os
-import pandas as pd
-from Dora import Dora
+from flaskr import cleaner as cl
 
 
 curr_dir = os.path.dirname(os.path.abspath(__file__))
@@ -17,31 +15,18 @@ def homepage():
 
 @app.route("/upload", methods=["GET", "POST"])
 def get_csv():
-    target = os.path.join(curr_dir, 'csv/')
-    file = request.files['file']
-    column_name = request.form.getlist('column_name[]')
-    print(column_name)
-    print('100')
-    filename = file.filename
-    dest = "/".join([target, filename])
-    file.save(dest)
-    #cd.clean(file, dest)
-    return jsonify(cname=column_name)
+    #target = os.path.join(curr_dir, 'csv/')
+    raw_data_file = request.files['file']
+    omit_column = request.form.getlist('column_name[]')
+    print(omit_column)
+    print(len(omit_column))
+    #filename = datafile.filename
+    #dest = "/".join([target, filename])
+    # file.save(dest)
+    resp = make_response(cl.clean(raw_data_file, omit_column))
+
+    return resp, 200
 
 
 if __name__ == "main":
     app.run(debug=True)
-
-
-def clean(file, dest, column_name):
-
-    data = pd.DataFrame(pd.read_csv(dest))
-
-    c_unique = {}
-    for cols in data.columns:
-        if data[cols].dtypes == 'object':
-            c_unique[cols] = list(data[cols].unique())
-
-    for key in c_unique:
-        print("0")
-        print(key, ": ", len(c_unique[key]))
