@@ -79,36 +79,42 @@ blockquote{
   position: relative;
   height: 350px;
   overflow: auto;
-  background-color: #1b262c;
+  background-color: #222831;
 }
 .table-wrapper-scroll-y {
   display: block;
-  background-color: #1b262c;
+  background-color: #222831;
+}
+
+tr{
+  border-bottom: 10px solid #000;
+}
+.table tbody tr th{
+  border-top: 2px solid #16232C;
 }
 th{
-  background-color: #e43f5a;
-  font: #1f4068;
+  background-color: #000;
+  font-weight: 500;
+  color: #ffffff;
+ 
 }
 .table td{
-  color: #e43f5a;
+  color: #ffffff;
 }
 .table{
   /* font:#c02739; */
   background-color: #1b262c;
 }
+/* #table_wrapper .container{
+  background-color: #151d1e;
+} */
 
     /* scroll bar saxxxx */
 ::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
+  width: 0 !important 
+                /* width of the entire scrollbar */
 }
-::-webkit-scrollbar-track {
-  background: #84142d;       /* color of the tracking area */
-}
-::-webkit-scrollbar-thumb {
-  background-color:#c02739;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 1px solid #e43f5a;  /* creates padding around scroll thumb */
-}
+
     /* scroll bar saxxxx */
 
 
