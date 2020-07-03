@@ -1,7 +1,13 @@
 #right_wrapper {
-  position: absolute;
+  position: relative;
   right: 0px;
   width: 16%;
   height: 100vh;
   border-left-style: dashed;
+}
+.history{
+  background-color: #1b262c;
+  font: #ff0000;
+  font-weight: bold;
+  height: 50%;
 }

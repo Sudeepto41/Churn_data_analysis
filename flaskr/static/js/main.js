@@ -2,17 +2,34 @@ fu = document.getElementById("fileUpload");
 fu.onchange = function () {
   print_table_client();
 };
+var names=[];
+var fileName=[];
+
+  
 
 function print_table_client() {
   var fileUpload = document.getElementById("fileUpload");
   var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
+  
+  var filen= document.getElementById('fileUpload').files[0].name;
+   console.log(filen); //file name fetching.
+    fileName.push(filen); //pushing names in array
+
+    //adding names to history
+    for(var i=0;i<fileName.length;i++)
+    {
+      var li = document.createElement('li');
+      li.innerHTML=fileName[i];
+      document.getElementById('listz').appendChild(li);
+      
+    }
 
   if (regex.test(fileUpload.value.toLowerCase())) {
     if (typeof FileReader != "undefined") {
       var reader = new FileReader();
       reader.onload = function (e) {
         var table_data =
-          '<table class="table table-bordered table-striped table-hover table-wrapper-scroll-y">';
+          '<table class="table table-wrapper-scroll-y">';
         var rows = e.target.result.split(/\r?\n|\r/);
         for (var i = 0; i < rows.length; i++) {
           var cells = rows[i].split(";").join(",").split(",");
@@ -45,13 +62,13 @@ function print_table_client() {
   var btn = document.getElementById("clean");
   btn.setAttribute("class", "btn btn-success btn-md active");
   btn.disabled = false;
-}; //prints table
+}; //prints data table uploaded by server
 
 function print_table_server(file) {
   console.log(file)
 
   var table_data =
-    '<table class="table table-bordered table-striped table-hover table-wrapper-scroll-y">';
+    '<table class="table table-hover table-wrapper-scroll-y">';
   var rows = file.split(/\r?\n|\r/);
   for (var i = 0; i < rows.length; i++) {
     var cells = rows[i].split(";").join(",").split(",");
@@ -76,5 +93,7 @@ function print_table_server(file) {
   }
   table_data += "</table>";
   $("#table").html(table_data);
-}
+}; //prints data table uploaded by server
+
+//adding history
 
