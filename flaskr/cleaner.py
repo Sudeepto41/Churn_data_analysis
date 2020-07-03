@@ -1,19 +1,21 @@
+import numpy as np
 import pandas as pd
-from Dora import Dora
 
 
-def clean(raw_data_file, omit_column):
+def cleanData(data_file, omit_column):
 
-    rawdata = pd.DataFrame(pd.read_csv(raw_data_file))
-    usedata = rawdata.drop(omit_column, axis=1)  # copy of originally file
+    data = pd.DataFrame(pd.read_csv(data_file))
+    data = data.drop(omit_column, axis=1)  # omit user defined columns
 
-    c_unique = {}
-    for cols in usedata.columns:
-        if usedata[cols].dtypes == 'object':
-            c_unique[cols] = list(usedata[cols].unique())
+    # replace whitespaces with NAN
+    data = data.replace(r'^\s*$', np.nan, regex=True)
+    data = data.dropna()  # drop the NAN values
+    data = data.reset_index()[data.columns]  # reset index
 
-    for key in c_unique:
-        print("0")
-        print(key, ": ", len(c_unique[key]))
+    # fix data types of numerical columns.
+    for col in data.columns:
+        # figuring out which column has linear data points.
+        if data[col].nunique() > data.nunique().mean():
+            data[col] = data[col].apply(pd.to_numeric)
 
-    return usedata.to_csv()  # converts cleaned data to csv
+    return data.to_csv()  # converts omitted column dataframe to csv

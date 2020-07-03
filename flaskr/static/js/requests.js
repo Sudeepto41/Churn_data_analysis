@@ -1,3 +1,4 @@
+//upload file function
 function upload() {
   $("#getfile").on('submit', function (e) {
     e.preventDefault();
@@ -24,3 +25,16 @@ function upload() {
     }
   }); //Sending the request
 } //upload function end
+
+//get history function
+function gethistory() {
+  $.ajax({
+    url: "http://127.0.0.1:5000/history",
+    type: "GET",
+    contentType: false,
+    processData: false,
+    success: function (history) {
+      console.log(history)
+    }
+  });
+}
