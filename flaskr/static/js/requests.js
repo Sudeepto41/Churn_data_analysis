@@ -18,10 +18,10 @@ function upload() {
     type: "POST",
     contentType: false,
     processData: false,
-    success: function (usedata) {
-      console.log("Success: 200")
-      console.log(usedata)
-      print_table_server(usedata)
+    success: function (usedata, desc) {
+      print_table_server(usedata) // print the recieved datafile
+      console.log(desc)
+      gethistory() //fetch history of uploaded files from server, after current request has been processed
     }
   }); //Sending the request
 } //upload function end
@@ -33,8 +33,9 @@ function gethistory() {
     type: "GET",
     contentType: false,
     processData: false,
-    success: function (history) {
-      console.log(history)
+    success: function (filename, time) {
+      console.log(filename, time)
+      printHistory(filename, time)
     }
   });
 }
