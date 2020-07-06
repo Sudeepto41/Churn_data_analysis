@@ -2,27 +2,10 @@ fu = document.getElementById("fileUpload");
 fu.onchange = function () {
   print_table_client();
 };
-var names=[];
-var fileName=[];
-
-  
 
 function print_table_client() {
   var fileUpload = document.getElementById("fileUpload");
   var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv|.txt)$/;
-  
-  var filen= document.getElementById('fileUpload').files[0].name;
-   console.log(filen); //file name fetching.
-    fileName.push(filen); //pushing names in array
-
-    //adding names to history
-    for(var i=0;i<fileName.length;i++)
-    {
-      var li = document.createElement('li');
-      li.innerHTML=fileName[i];
-      document.getElementById('listz').appendChild(li);
-      
-    }
 
   if (regex.test(fileUpload.value.toLowerCase())) {
     if (typeof FileReader != "undefined") {
@@ -65,8 +48,6 @@ function print_table_client() {
 }; //prints data table uploaded by server
 
 function print_table_server(file) {
-  console.log(file)
-
   var table_data =
     '<table class="table table-hover table-wrapper-scroll-y">';
   var rows = file.split(/\r?\n|\r/);
@@ -96,4 +77,13 @@ function print_table_server(file) {
 }; //prints data table uploaded by server
 
 //adding history
+function printHistory(filename, time) {  //filename and time recieved from server
+  //adding names to history
+  for (var i = 0; i < filename.length; i++) {
+    var li = document.createElement('li');
+    li.innerHTML = filename[i], time[i];
+    document.getElementById('listz').appendChild(li);
+
+  }
+}
 
