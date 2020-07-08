@@ -3,6 +3,14 @@ body {
   background-color: #151d1e;
   display: flex;
 }
+#naam{
+  float: left;
+  margin-left: 80px;
+}
+#clean{
+  margin-left: 80px;
+  margin-top: 20px;
+}
 
 #preloader {
   position: fixed;
@@ -79,6 +87,7 @@ blockquote{
 .my-custom-scrollbar {
   position: relative;
   height: 350px;
+  width: 1480px;
   overflow: auto;
   background-color: #222831;
 }
@@ -95,7 +104,8 @@ tr{
 }
 th{
   background-color: #000;
-  font-weight: 500;
+  font-weight: bolder;
+  text-transform: capitalize;
   color: #ffffff;
  
 }

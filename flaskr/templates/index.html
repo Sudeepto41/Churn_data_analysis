@@ -14,14 +14,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/right_sidebar.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 
 <body>
 
     <div id="preloader"></div>
     <div id="table_preloader"></div>
-
-    <nav id="sidebar">
+ <!--nav start -->
+    <!-- <nav id="sidebar">
         <div class="sidebar-header">
             <strong>CD</strong>
         </div>
@@ -44,8 +47,23 @@
             </li>
         </ul>
 
-    </nav>
+    </nav> -->
     <!--nav end -->
+
+   <!-- NEW HOVER NAVBAR START-->
+   <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+    <a href="#"><span><i class="material-icons">info</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;about</span></a><br>
+    <a href="#"><i class="material-icons">spa</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;services</a></span>
+    </a><br>
+    <a href="#"><i class="material-icons">monetization_on</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</span></a><br>
+    <a href="#"><i class="material-icons">email</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
+</div>
+   <!-- NEW HOVER NAVBAR END-->
+
+
+
+
+
 
     <div id="center_wrapper">
         <!--center_wrapper start -->
@@ -74,9 +92,10 @@
             </div>
         </div>
         <!--header_wrapper end -->
-
+        <h2 id="naam">Filename</h2>>
         <div id="table_wrapper">
             <!--table_wrapper start -->
+            
             <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
                 <br>
                 <div class="container">

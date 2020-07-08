@@ -20,7 +20,7 @@ function upload() {
     processData: false,
     success: function (usedata, desc) {
       print_table_server(usedata) // print the recieved datafile
-      console.log(desc)
+      //console.log(desc)
       gethistory() //fetch history of uploaded files from server, after current request has been processed
     }
   }); //Sending the request

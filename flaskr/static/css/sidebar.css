@@ -1,4 +1,4 @@
-#sidebar {
+/* #sidebar {
   position: fixed;
   height: 100vh;
   min-width: 4%;
@@ -11,65 +11,128 @@
   text-align: center;
   background: #000000;
   line-height: 10px;
-}
+} */
 
 /* Toggling the sidebar header content, hide the big heading [h3] and showing the small heading [strong] and vice versa*/
-#sidebar .sidebar-header strong {
+/* #sidebar .sidebar-header strong {
   display: block;
   font-size: 2.3em;
   color: #3b82ea;
-}
+} */
 
-#sidebar ul {
+/* #sidebar ul {
   margin-top: 300px;
-}
+} */
 
-#sidebar ul li a {
+/* #sidebar ul li a {
   padding: 20px 10px;
   text-align: center;
   display: block;
   font-size: 1.6em;
   margin-bottom: 10px;
   color: #fff;
-}
+} */
 
-#sidebar ul li a:hover {
+/* #sidebar ul li a:hover {
   cursor: pointer;
 }
 
 #sidebar .active {
   border-radius: 5%;
-  background: linear-gradient(#ff4b33, #9603b3);
-}
+  background: linear-gradient(#ff4b33, #9603b3); */
 
-@media (max-width: 768px) {
+
+/* @media (max-width: 768px) { */
   /* 80px and its content aligned to centre. Pushing it off the screen with the
        negative left margin
     */
-  #sidebar {
+  /* #sidebar {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
     margin-left: -80px !important;
-  }
+  } */
 
   /* Toggling the sidebar header content, 
        hide the big heading [h3] and showing the small heading [strong] and vice versa
     */
-  #sidebar .sidebar-header strong {
+  /* #sidebar .sidebar-header strong {
     display: none;
-  }
+  } */
 
   /* Downsize the navigation links font size */
-  #sidebar ul li a {
+  /* #sidebar ul li a {
     padding: 20px 10px;
     font-size: 0.85em;
-  }
+  } */
 
-  #sidebar ul li a i {
+  /* #sidebar ul li a i {
     margin-right: 0;
     display: block;
     font-size: 1.5em;
     margin-bottom: 5px;
+  }
+} */
+
+
+
+
+.sidebar {
+  height: 100%;
+  width: 85px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  white-space: nowrap;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.material-icons,
+.icon-text {
+  vertical-align: middle;
+}
+
+.material-icons {
+  padding-bottom: 3px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+  margin-left: 100px;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 250px) {
+  .sidebar {
+      padding-top: 15px;
+  }
+  .sidebar a {
+      font-size: 12px;
   }
 }

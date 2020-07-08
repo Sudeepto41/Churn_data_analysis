@@ -1,4 +1,7 @@
 fu = document.getElementById("fileUpload");
+var dis = document.getElementById('naam');
+
+
 fu.onchange = function () {
   print_table_client();
 };
@@ -10,6 +13,11 @@ function print_table_client() {
   if (regex.test(fileUpload.value.toLowerCase())) {
     if (typeof FileReader != "undefined") {
       var reader = new FileReader();
+
+      var file = $('#fileUpload')[0].files[0].name; ///fetching filename in a variable 1
+      console.log(file); ///fetching filename in a variable 2
+      dis.innerHTML=file;
+    
       reader.onload = function (e) {
         var table_data =
           '<table class="table table-wrapper-scroll-y">';
@@ -74,6 +82,8 @@ function print_table_server(file) {
   }
   table_data += "</table>";
   $("#table").html(table_data);
+  var btn = document.getElementById("clean");
+  btn.disabled = true;
 }; //prints data table uploaded by server
 
 //adding history
@@ -81,9 +91,25 @@ function printHistory(filename, time) {  //filename and time recieved from serve
   //adding names to history
   for (var i = 0; i < filename.length; i++) {
     var li = document.createElement('li');
-    li.innerHTML = filename[i], time[i];
+    
+    li.innerHTML = "name:"+ filename[i] + ", time:"+ time[i];
+    dis.innerHTML=filename[i];
     document.getElementById('listz').appendChild(li);
 
-  }
+  } 
 }
+// HOVERBAR TOGGLE
+var mini = true;
+
+        function toggleSidebar() {
+            if (mini) {
+                console.log("opening sidebar");
+                document.getElementById("mySidebar").style.width = "250px";
+                this.mini = false;
+            } else {
+                console.log("closing sidebar");
+                document.getElementById("mySidebar").style.width = "85px";
+                this.mini = true;
+            }
+        }
 
