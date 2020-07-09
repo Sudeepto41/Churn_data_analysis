@@ -14,6 +14,7 @@ app = Flask(__name__)
 filename = ''
 history_filename = []
 history_time = []
+desc = {}
 
 
 def update_history(raw_data_file, history_filename, history_time):
@@ -38,31 +39,28 @@ def homepage():
 
 @app.route("/upload", methods=["GET", "POST"])
 def get_csv():
+
     raw_data_file = request.files['file']
     omit_column = request.form.getlist('column_name[]')
 
-    # drop columns, drop null values, fix column dtype
+    # drop columns, drop null values, fix column dtype, get description of dataset
     use_data, desc = cl.cleanData(raw_data_file, omit_column)
 
-    # create data description
-    #desc = pd.DataFrame(pd.read_csv(use_data)).describe(include='all')
-    
     # call function to update history
     update_history(raw_data_file, history_filename, history_time)
 
     # send back the cleaned csv data file
-    resp = make_response(use_data)
-    return resp, 200
+    return make_response(use_data)
 
 
 @app.route("/history", methods=['GET'])
 def getHistory():
-    resp = jsonify(history_filename, history_time)
-    return resp
+    return jsonify(history_filename, history_time)
+
 
 @app.route("/desc", methods=['GET'])
 def getDescription():
-    return 'yeet!!!'
+    return jsonify(desc)
 
 
 if __name__ == "main":

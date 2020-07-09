@@ -18,6 +18,6 @@ def cleanData(data_file, omit_column):
         if data[col].nunique() > data.nunique().mean():
             data[col] = data[col].apply(pd.to_numeric)
 
-    desc = data.describe(include='all')
+    desc = dict(data.describe(include='all'))
 
     return data.to_csv(), desc  # converts omitted column dataframe to csv

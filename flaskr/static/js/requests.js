@@ -18,9 +18,9 @@ function upload() {
     type: "POST",
     contentType: false,
     processData: false,
-    success: function (usedata, desc) {
+    success: function (usedata) {
       print_table_server(usedata) // print the recieved datafile
-      //console.log(desc)
+      getDescription() //fetch description of dataset
       gethistory() //fetch history of uploaded files from server, after current request has been processed
     }
   }); //Sending the request
@@ -36,6 +36,19 @@ function gethistory() {
     success: function (filename, time) {
       console.log(filename, time)
       printHistory(filename, time)
+    }
+  });
+}
+
+//get description function
+function getDescription() {
+  $.ajax({
+    url: "http://127.0.0.1:5000/desc",
+    type: "GET",
+    contentType: false,
+    processData: false,
+    success: function (desc) {
+      console.log(desc)
     }
   });
 }

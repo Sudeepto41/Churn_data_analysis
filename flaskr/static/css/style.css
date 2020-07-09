@@ -1,4 +1,3 @@
-
 body {
   background-color: #151d1e;
   display: flex;
@@ -27,6 +26,12 @@ body {
 #center_wrapper {
   margin-left: 80px;
   width: 80%;
+  height: 100vh;
+}
+
+.first,
+.second,
+.third {
   height: 100vh;
 }
 
@@ -79,13 +84,12 @@ input[type="file"] {
   float: right;
 }
 
-
 #page_heading h1 {
   font-size: 7.5rem;
   font-weight: 600;
   color: black;
 }
-blockquote{
+blockquote {
   font-size: 14.5px;
 }
 .my-custom-scrollbar {
@@ -100,23 +104,22 @@ blockquote{
   background-color: #222831;
 }
 
-tr{
+tr {
   border-bottom: 10px solid #000;
 }
-.table tbody tr th{
-  border-top: 2px solid #16232C;
+.table tbody tr th {
+  border-top: 2px solid #16232c;
 }
-th{
+th {
   background-color: #000;
   font-weight: bolder;
   text-transform: capitalize;
   color: #ffffff;
- 
 }
-.table td{
+.table td {
   color: #ffffff;
 }
-.table{
+.table {
   /* font:#c02739; */
   background-color: #1b262c;
 }
@@ -124,14 +127,13 @@ th{
   background-color: #151d1e;
 } */
 
-    /* scroll bar saxxxx */
+/* scroll bar saxxxx */
 ::-webkit-scrollbar {
-  width: 0 !important 
-                /* width of the entire scrollbar */
+  width: 0 !important;
+  /* width of the entire scrollbar */
 }
 
-    /* scroll bar saxxxx */
-
+/* scroll bar saxxxx */
 
 /* .table-bordered{
   border: 1px solid #801336;
