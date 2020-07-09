@@ -1,6 +1,8 @@
 fu = document.getElementById("fileUpload");
 var dis = document.getElementById('naam');
-
+var time;
+var today = new Date();
+var file;
 
 fu.onchange = function () {
   print_table_client();
@@ -14,9 +16,13 @@ function print_table_client() {
     if (typeof FileReader != "undefined") {
       var reader = new FileReader();
 
-      var file = $('#fileUpload')[0].files[0].name; ///fetching filename in a variable 1
+      file = $('#fileUpload')[0].files[0].name; ///fetching filename in a variable 1
       console.log(file); ///fetching filename in a variable 2
       dis.innerHTML=file;
+
+      //fetching time
+       time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); //fetching time of upload
+      console.log(time);
     
       reader.onload = function (e) {
         var table_data =
@@ -84,6 +90,11 @@ function print_table_server(file) {
   $("#table").html(table_data);
   var btn = document.getElementById("clean");
   btn.disabled = true;
+
+  // var li = document.createElement('li');
+  // li.innerHTML="name:"+ file + "time:" + time;
+  // document.getElementById('listz').appendChild(li);
+
 }; //prints data table uploaded by server
 
 //adding history
@@ -91,25 +102,13 @@ function printHistory(filename, time) {  //filename and time recieved from serve
   //adding names to history
   for (var i = 0; i < filename.length; i++) {
     var li = document.createElement('li');
-    
-    li.innerHTML = "name:"+ filename[i] + ", time:"+ time[i];
-    dis.innerHTML=filename[i];
+    li.innerHTML = filename[i];
     document.getElementById('listz').appendChild(li);
-
   } 
 }
-// HOVERBAR TOGGLE
-var mini = true;
 
-        function toggleSidebar() {
-            if (mini) {
-                console.log("opening sidebar");
-                document.getElementById("mySidebar").style.width = "250px";
-                this.mini = false;
-            } else {
-                console.log("closing sidebar");
-                document.getElementById("mySidebar").style.width = "85px";
-                this.mini = true;
-            }
-        }
+
+
+
+
 
