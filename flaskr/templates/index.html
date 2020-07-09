@@ -49,52 +49,62 @@
 
     <div id="center_wrapper">
         <!--center_wrapper start -->
-        <h3 id="dashboard"><strong>Dashboard</strong></h3>
+        <div class="first">
+            <h3 id="dashboard"><strong>Dashboard</strong></h3>
 
-        <div id="header_wrapper">
-            <!--header_wrapper start -->
-            <div id="file_upload_wrapper">
+            <div id="header_wrapper">
+                <!--header_wrapper start -->
+                <div id="file_upload_wrapper">
 
-                <h2><strong>Add .csv data</strong></h2>
-                <h5>Upload your data to our website<br>to start analyzing</h5>
-                <br>
+                    <h2><strong>Add .csv data</strong></h2>
+                    <h5>Upload your data to our website<br>to start analyzing</h5>
+                    <br>
+                    <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+                        <label for="fileUpload" id="file_upload_label">
+                            <i class="fas fa-plus" id="upload_icon"></i>
+                            <input type="file" id="fileUpload" name="file" accept=".csv">
+                        </label>
+                    </form>
+                </div>
+                <div id="page_heading">
+                    <h1>Churn Analyzer</h1>
+                    <blockquote class="blockquote text-right" style="text-align: left; color: #ffffff;">
+                        <p class="mb-0">Your most unhappy customers are your greatest source of learning!!</p>
+                        <footer class="blockquote-footer">Bill Gates</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <!--header_wrapper end -->
+
+            <div id="table_wrapper">
+                <!--table_wrapper start -->
                 <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-                    <label for="fileUpload" id="file_upload_label">
-                        <i class="fas fa-plus" id="upload_icon"></i>
-                        <input type="file" id="fileUpload" name="file" accept=".csv">
-                    </label>
-                </form>
-            </div>
-            <div id="page_heading">
-                <h1>Churn Analyzer</h1>
-                <blockquote class="blockquote text-right" style="text-align: left; color: #ffffff;">
-                    <p class="mb-0">Your most unhappy customers are your greatest source of learning!!</p>
-                    <footer class="blockquote-footer">Bill Gates</footer>
-                </blockquote>
-            </div>
-        </div>
-        <!--header_wrapper end -->
+                    <br>
+                    <div class="container">
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar loader">
+                            <div id="table">
 
-        <div id="table_wrapper">
-            <!--table_wrapper start -->
-            <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-                <br>
-                <div class="container">
-                    <div class="table-wrapper-scroll-y my-custom-scrollbar loader">
-                        <div id="table">
+                            </div>
 
                         </div>
 
                     </div>
-
+                </form>
+                <div class="uploadsss">
+                    <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
+                        Data</button>
                 </div>
-            </form>
-            <div class="uploadsss">
-                <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
-                    Data</button>
             </div>
+            <!--table_wrapper end -->
         </div>
-        <!--table_wrapper end -->
+
+        <div class="second">
+
+        </div>
+
+        <div class="third">
+
+        </div>
     </div>
     <!--center_wrapper end -->
 
@@ -107,7 +117,7 @@
 
             </ul>
         </div>
-        
+
 
     </div>
     <!--right_wrapper end -->
