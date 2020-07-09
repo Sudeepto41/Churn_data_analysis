@@ -33,8 +33,8 @@ function gethistory() {
     type: "GET",
     contentType: false,
     processData: false,
-    success: function (filename, time) {
-      console.log(filename, time)
+    success: function (history) {
+      console.log(history[0], history[1])
       printHistory(filename, time)
     }
   });
