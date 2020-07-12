@@ -34,8 +34,8 @@ function gethistory() {
     contentType: false,
     processData: false,
     success: function (history) {
-      console.log(history[0], history[1])
-      printHistory(filename, time)
+      console.log(history[1])
+      printHistory(history)
     }
   });
 }
@@ -48,7 +48,7 @@ function getDescription() {
     contentType: false,
     processData: false,
     success: function (desc) {
-      console.log(desc)
+      console.log(desc['gender'])
     }
   });
 }
