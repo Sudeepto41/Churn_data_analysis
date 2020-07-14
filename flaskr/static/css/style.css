@@ -3,14 +3,14 @@ body {
   display: flex;
 }
 
-#histori{
+#histori {
   display: none;
 }
-#naam{
+#naam {
   float: left;
   margin-left: 80px;
 }
-#clean{
+#clean {
   margin-left: 80px;
   margin-top: 20px;
 }
@@ -24,8 +24,8 @@ body {
 }
 
 #center_wrapper {
-  margin-left: 80px;
-  width: 80%;
+  margin-left: 5%;
+  width: 95%;
   height: 100vh;
 }
 
@@ -81,7 +81,6 @@ input[type="file"] {
 
 #page_heading {
   width: 600px;
-  float: right;
 }
 
 #page_heading h1 {
@@ -89,13 +88,13 @@ input[type="file"] {
   font-weight: 600;
   color: black;
 }
+
 blockquote {
   font-size: 14.5px;
 }
 .my-custom-scrollbar {
   position: relative;
-  height: 350px;
-  width: 1480px;
+  height: 500px;
   overflow: auto;
   background-color: #222831;
 }
@@ -123,9 +122,6 @@ th {
   /* font:#c02739; */
   background-color: #1b262c;
 }
-/* #table_wrapper .container{
-  background-color: #151d1e;
-} */
 
 /* scroll bar saxxxx */
 ::-webkit-scrollbar {
@@ -135,17 +131,13 @@ th {
 
 /* scroll bar saxxxx */
 
-/* .table-bordered{
-  border: 1px solid #801336;
-} */
-
 h2 {
   text-align: center;
 }
 
 .my-custom-scrollbar {
   position: relative;
-  height: 350px;
+  height: 500px;
   overflow: auto;
 }
 .table-wrapper-scroll-y {

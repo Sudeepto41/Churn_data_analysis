@@ -18,12 +18,12 @@ function print_table_client() {
 
       file = $('#fileUpload')[0].files[0].name; ///fetching filename in a variable 1
       console.log(file); ///fetching filename in a variable 2
-     // dis.innerHTML=file;
+      dis.innerHTML = file;
 
       //fetching time
-       time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); //fetching time of upload
+      time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); //fetching time of upload
       console.log(time);
-    
+
       reader.onload = function (e) {
         var table_data =
           '<table class="table table-wrapper-scroll-y">';
@@ -101,11 +101,11 @@ function print_table_server(file) {
 function printHistory(history) {  //filename and time recieved from server
   //adding names to history
   console.log("yeeet")
-  for (var i = 0; i<history[0].length; i++) {
+  for (var i = 0; i < history[0].length; i++) {
     var li = document.createElement('li');
     li.innerHTML = history[0][i] + history[1][i];
     document.getElementById('listz').appendChild(li);
-  } 
+  }
 }
 
 

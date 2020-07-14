@@ -1,0 +1,14 @@
+.chart_wrapper {
+  height: 100vh;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  justify-content: center;
+}
+.plot_wrapper {
+  height: 90vh;
+  width: 40%;
+  border: 5px solid #ffffff;
+}

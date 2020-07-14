@@ -12,6 +12,7 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/sidebar.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/right_sidebar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/plot.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/style.css')}}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
@@ -23,121 +24,119 @@
 
     <div id="preloader"></div>
     <div id="table_preloader"></div>
- <!--nav start -->
-    <!-- <nav id="sidebar">
-        <div class="sidebar-header">
-            <strong>CD</strong>
-        </div>
 
-        <ul class="list-unstyled components">
-            <li>
-                <a id="table_toggle">
-                    <i class="fas fa-table"></i>
-                </a>
-            </li>
-            <li>
-                <a id="chart_toggle">
-                    <i class="fas fa-chart-pie"></i>
-                </a>
-            </li>
-            <li>
-                <a id="predict_toggle">
-                    <i class="fas fa-diagnoses"></i>
-                </a>
-            </li>
-        </ul>
-
-    </nav> -->
-    <!--nav end -->
-
-   <!-- NEW HOVER NAVBAR START-->
-   <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
-    <a href="#"><span><i class="material-icons">info</i><span class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Table</span></a><br>
-    <a href="#"><i class="material-icons">spa</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;about</a></span>
-    </a><br>
-    <a href="#"><i class="material-icons">monetization_on</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</span></a><br>
-    <a href="#"><i class="material-icons">email</i><span class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
-</div>
-   <!-- NEW HOVER NAVBAR END-->
+    <!-- NEW HOVER NAVBAR START-->
+    <div id="mySidebar" class="sidebar" onmouseover="toggleSidebar()" onmouseout="toggleSidebar()">
+        <a href="#"><span><i class="material-icons">info</i><span
+                    class="icon-text">&nbsp;&nbsp;&nbsp;&nbsp;Table</span></a><br>
+        <a href="#"><i class="material-icons">spa</i><span
+                class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;about</a></span>
+        </a><br>
+        <a href="#"><i class="material-icons">monetization_on</i><span
+                class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;clients</span></a><br>
+        <a href="#"><i class="material-icons">email</i><span
+                class="icon-text"></span>&nbsp;&nbsp;&nbsp;&nbsp;contact<span></a>
+    </div>
+    <!-- NEW HOVER NAVBAR END-->
 
 
 
 
 
-
+    <!--center_wrapper start -->
     <div id="center_wrapper">
-        <!--center_wrapper start -->
-        <h3 id="dashboard"><strong>Dashboard</strong></h3>
-
-        <div id="header_wrapper">
+        <div class="first" style="height: 100vh;">
+            <h3 id="dashboard"><strong>Dashboard</strong></h3>
             <!--header_wrapper start -->
-            <div id="file_upload_wrapper">
-
-                <h2><strong>Add .csv data</strong></h2>
-                <h5>Upload your data to our website<br>to start analyzing</h5>
-                <br>
-                <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-                    <label for="fileUpload" id="file_upload_label">
-                        <i class="fas fa-plus" id="upload_icon"></i>
-                        <input type="file" id="fileUpload" name="file" accept=".csv">
-                    </label>
-                </form>
-            </div>
-            <div id="page_heading">
-                <h1>Churn Analyzer</h1>
-                <blockquote class="blockquote text-right" style="text-align: left; color: #ffffff;">
-                    <p class="mb-0">Your most unhappy customers are your greatest source of learning!!</p>
-                    <footer class="blockquote-footer">Bill Gates</footer>
-                </blockquote>
-            </div>
-        </div>
-        <!--header_wrapper end -->
-        <h2 id="naam">Filename</h2>>
-        <div id="table_wrapper">
-            <!--table_wrapper start -->
-            
-            <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
-                <br>
-                <div class="container">
-                    <div class="table-wrapper-scroll-y my-custom-scrollbar loader">
-                        <div id="table">
-
-                        </div>
+            <div class="container-fluid" id="header_wrapper ">
+                <div class="row" style="display: flex; justify-content: left; margin: 0 0;">
+                    <div class="col-md-auto" id="file_upload_wrapper">
+                        <h2><strong>Add .csv data</strong></h2>
+                        <h5>Upload your data to our website<br>to start analyzing</h5>
+                        <br>
+                        <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+                            <label for="fileUpload" id="file_upload_label">
+                                <i class="fas fa-plus" id="upload_icon"></i>
+                                <input type="file" id="fileUpload" name="file" accept=".csv">
+                            </label>
+                        </form>
+                    </div>
+                    <div class="col-md-auto" id="page_heading">
+                        <h1>Churn Analyzer</h1>
+                        <blockquote class="blockquote text-right" style="text-align: left; color: #ffffff;">
+                            <p class="mb-0">Your most unhappy customers are your greatest source of learning!!</p>
+                            <footer class="blockquote-footer">Bill Gates</footer>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-auto" id="history">
 
                     </div>
-
                 </div>
-            </form>
-            <div class="uploadsss">
-                <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
-                    Data</button>
+
+            </div>
+            <!--header_wrapper end -->
+            <br><br>
+            <h2 id="naam">Filename</h2>>
+            <br><br>
+
+            <!--table_wrapper start -->
+            <div id="table_wrapper">
+                <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
+                    <br>
+                    <div class="container-fluid" style="justify-content: center;">
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar loader" style="margin-left: 5%;">
+                            <div id="table">
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="uploadsss">
+                    <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
+                        Data</button>
+                </div>
+            </div>
+            <!--table_wrapper end -->
+        </div>
+
+        <div class="chart_wrapper container">
+            <div class="row">
+                <div class="plot_wrapper col col-md-12">
+                    X:<input type="text">
+                    <br>
+                    <input type="text">
+                    <br>
+                    <input type="button" value="PLOT">
+                    <br>
+                    <canvas>
+
+                    </canvas>
+                </div>
+
+                <div class="row">
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
+
+                        </canvas>
+                    </div>
+                </div>
             </div>
         </div>
-        <!--table_wrapper end -->
+
     </div>
     <!--center_wrapper end -->
-
-    <!--right_wrapper start -->
-    <div id="right_wrapper">
-        <!--right_wrapper start -->
-         <button onclick=gethistory() id="histori">History</button> 
-        <div class="history">
-            <ul id="listz">
-
-            </ul>
-        </div>
-        
-
-    </div>
-    <!--right_wrapper end -->
-
-
-
 
 
     <!-- script links  -->
 
-    <script src="{{ url_for('static', filename = 'js/jquery.js')}}"></script> <!-- offline - static/js/ , jquery file-->
+    <script src="{{ url_for('static', filename = 'js/jquery.js')}}"></script>
+    <!-- offline - static/js/ , jquery file-->
     <script src="https://kit.fontawesome.com/0f8d0c9a14.js" crossorigin="anonymous"></script> <!-- cdn, icons-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -155,7 +154,7 @@
             setTimeout(function () {
                 var pl = document.getElementById('preloader')
                 pl.style.display = 'none';
-            }, 2000);
+            }, 1000);
 
         })
     </script>
