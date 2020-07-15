@@ -1,14 +1,23 @@
 .chart_wrapper {
   height: 100vh;
   width: 100%;
+  overflow-y: auto;
 }
 
 .row {
   width: 100%;
   justify-content: center;
 }
+
+.plotRow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .plot_wrapper {
-  height: 90vh;
+  height: 80vh;
   width: 40%;
-  border: 5px solid #ffffff;
+  margin: 5% 2.5%;
+  background-color: #222831;
+  border-radius: 2%;
 }

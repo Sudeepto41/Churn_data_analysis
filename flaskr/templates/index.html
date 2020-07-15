@@ -75,10 +75,8 @@
 
             </div>
             <!--header_wrapper end -->
-            <br><br>
-            <h2 id="naam">Filename</h2>>
-            <br><br>
-
+            <br>
+            <h2 id="naam" style="color: #ffffff; align-self: center;"></h2>
             <!--table_wrapper start -->
             <div id="table_wrapper">
                 <form id='getfile' action="/upload" method="POST" enctype="multipart/form-data">
@@ -91,29 +89,83 @@
                         </div>
                     </div>
                 </form>
-                <div class="uploadsss">
-                    <button class="btn btn-success" id="clean" onclick=upload() disabled="disabled">Clean
-                        Data</button>
-                </div>
+            </div>
+            <div class="uploadsss" style="padding: 2%; text-align: center;">
+                <button class="btn btn-success" style="padding: 15px; border-radius: 50%;" id="clean" onclick=upload()
+                    disabled="disabled" data-toggle="tooltip" data-placement="top" data-html="true"
+                    title="Clean data 1.Drop columns 2.Drop Null/missing Values 3.Fix Dtype of columns">
+                    <i class="fas fa-broom" style="font-size: 23px;"></i>
+                </button>
+
             </div>
             <!--table_wrapper end -->
         </div>
 
         <div class="chart_wrapper container">
-            <div class="row">
-                <div class="plot_wrapper col col-md-12">
-                    X:<input type="text">
-                    <br>
-                    <input type="text">
-                    <br>
-                    <input type="button" value="PLOT">
-                    <br>
-                    <canvas>
+            <div class="wrapp" style="overflow-y: scroll; height: 100vh">
+                <div class="row plotRow">
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
 
-                    </canvas>
+                        </canvas>
+                    </div>
+
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
+
+                        </canvas>
+                    </div>
                 </div>
+                <div class="row plotRow">
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
 
-                <div class="row">
+                        </canvas>
+                    </div>
+
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
+
+                        </canvas>
+                    </div>
+                </div>
+                <div class="row plotRow">
+                    <div class="plot_wrapper col col-md-12">
+                        X:<input type="text">
+                        <br>
+                        <input type="text">
+                        <br>
+                        <input type="button" value="PLOT">
+                        <br>
+                        <canvas>
+
+                        </canvas>
+                    </div>
+
                     <div class="plot_wrapper col col-md-12">
                         X:<input type="text">
                         <br>
@@ -127,8 +179,8 @@
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
     <!--center_wrapper end -->
 
@@ -137,6 +189,7 @@
 
     <script src="{{ url_for('static', filename = 'js/jquery.js')}}"></script>
     <!-- offline - static/js/ , jquery file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://kit.fontawesome.com/0f8d0c9a14.js" crossorigin="anonymous"></script> <!-- cdn, icons-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"

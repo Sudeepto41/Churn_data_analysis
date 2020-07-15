@@ -1,18 +1,10 @@
 body {
-  background-color: #151d1e;
+  background-color: #181f20;
   display: flex;
 }
 
 #histori {
   display: none;
-}
-#naam {
-  float: left;
-  margin-left: 80px;
-}
-#clean {
-  margin-left: 80px;
-  margin-top: 20px;
 }
 
 #preloader {
@@ -94,7 +86,8 @@ blockquote {
 }
 .my-custom-scrollbar {
   position: relative;
-  height: 500px;
+  height: 50%;
+  width: 90%;
   overflow: auto;
   background-color: #222831;
 }
@@ -139,7 +132,4 @@ h2 {
   position: relative;
   height: 500px;
   overflow: auto;
-}
-.table-wrapper-scroll-y {
-  display: block;
 }

@@ -20,25 +20,10 @@ function upload() {
     processData: false,
     success: function (usedata) {
       print_table_server(usedata) // print the recieved datafile
-      getDescription() //fetch description of dataset
-      gethistory() //fetch history of uploaded files from server, after current request has been processed
+      // getDescription() //fetch description of dataset
     }
   }); //Sending the request
 } //upload function end
-
-//get history function
-function gethistory() {
-  $.ajax({
-    url: "http://127.0.0.1:5000/history",
-    type: "GET",
-    contentType: false,
-    processData: false,
-    success: function (history) {
-      console.log(history[1])
-      printHistory(history)
-    }
-  });
-}
 
 //get description function
 function getDescription() {
